@@ -18,6 +18,20 @@ class Post(models.Model):
 	post_picture = models.FileField(default="default.jpg",upload_to='post_picture')
 
 
+class Following(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+	following_user = models.CharField(max_length=100, null=True)
+
+	def __str__(self):
+		return self.following_user.username
+
+
+class Follower(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+	follower_user = models.CharField(max_length=100, null=True)
+
+	def __str__(self):
+		return self.follower_user.username
 
 
 class Comment(models.Model):

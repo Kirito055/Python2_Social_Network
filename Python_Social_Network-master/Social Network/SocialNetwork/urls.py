@@ -17,6 +17,9 @@ urlpatterns = [
      path('register/',user_views.UserFormView.as_view(template_name='core/registration_form.html'),name='register'),
      url(r'^profile/(?P<username>\w+)/$',user_views.profile,name='profile'),
      url(r'^postweb/(?P<username>\w+)/$',user_views.postweb,name="postweb"),
+
+    url(r'^followweb/(?P<username>\w+)/$', user_views.followweb, name="followweb"),
+    url(r'^unfollowweb/(?P<username>\w+)/$', user_views.unfollowweb, name="unfollowweb"),
      url(r'^commentweb/(?P<username>\w+)/(?P<post_id>\d+)/$', user_views.commentweb,name = "commentweb"),
      path('feed/',user_views.feed,name="feed"),
      

@@ -3,9 +3,8 @@ from . import views
 
 app_name = 'core'
 
-urlpatterns=[
+urlpatterns = [
 
-		url(r'^$',views.index, name='index'),
-		
-		
+    url(r'^$', views.index, name='index'),
+
 ]
